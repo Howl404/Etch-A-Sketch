@@ -1,0 +1,22 @@
+.container {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(16, 50px);
+  grid-template-rows: repeat(16, 50px);
+  justify-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  height: 100%;
+  width: 100%;
+}
+
+div {
+  background-color: white;
+  height: 3rem;
+  width: 3rem;
+  margin: 0;
+}
+
+.hover {
+  background-color: red;
+}
