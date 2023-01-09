@@ -17,12 +17,12 @@ const container = document.querySelector(".container");
 const button = document.querySelector(".btn");
 
 button.addEventListener("click", function () {
-  let numberOfDivs = prompt("Number of squares");
+  let numberOfDivs = prompt("Number of squares per side");
   while (numberOfDivs > 100) {
     alert(
-      "Maximum allowed number of squares is 100, please enter valid number."
+      "Maximum allowed number of squares per side is 100, please enter valid number."
     );
-    numberOfDivs = prompt("Number of squares");
+    numberOfDivs = prompt("Number of squares per side");
   }
   createDivs(numberOfDivs);
 });
