@@ -4,11 +4,37 @@ for (i = 0; i < 4096; i++) {
     .appendChild(document.createElement("div"));
 }
 
+let mouse = 1;
+
+window.addEventListener("load", startup, false);
+let colorWell;
+let currentColor = "#ff0000";
+function startup() {
+  colorWell = document.querySelector("#color");
+  colorWell.value = "#ff0000";
+  colorWell.addEventListener("input", update, false);
+  colorWell.addEventListener("change", update, false);
+  colorWell.select();
+}
+
+function update(event) {
+  currentColor = event.target.value;
+}
+
 let divs = document.querySelectorAll("div.container > div");
 
 divs.forEach(function (currentDiv) {
-  currentDiv.addEventListener("mouseover", function () {
-    currentDiv.classList.add("hover");
+  window.addEventListener("mousedown", function (event) {
+    event.preventDefault();
+    mouse = 1;   
+    currentDiv.addEventListener("mouseenter", function () {
+      if(mouse == 1){currentDiv.style.backgroundColor = currentColor;}
+    
+  })
+  ;})
+
+  window.addEventListener("mouseup", function () {
+    mouse = 0;
   });
 });
 
@@ -43,9 +69,19 @@ function createDivs(amount) {
   container.style.gridTemplateRows = `repeat(${amount}, 1fr)`;
   container.style.gridTemplateColumns = `repeat(${amount}, 1fr)`;
   divs = document.querySelectorAll("div.container > div");
+
   divs.forEach(function (currentDiv) {
-    currentDiv.addEventListener("mouseover", function () {
-      currentDiv.classList.add("hover");
+    window.addEventListener("mousedown", function (event) {
+      event.preventDefault();
+      mouse = 1;   
+      currentDiv.addEventListener("mouseenter", function () {
+        if(mouse == 1){currentDiv.style.backgroundColor = currentColor;}
+      
+    })
+    ;})
+
+    window.addEventListener("mouseup", function () {
+      mouse = 0;
     });
   });
 }

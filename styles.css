@@ -1,3 +1,10 @@
+body,
+.flex {
+  background-color: #EAEDF2;
+}
+
+
+
 .container {
   background-color: black;
   border: 1px solid black;
@@ -6,8 +13,8 @@
   grid-template-rows: repeat(64, 0.5fr);
   gap: 1px;
   justify-content: center;
-  width: 960px;
-  height: 720px;
+  width: 95%;
+  height: 80vh;
   margin: auto;
 }
 
@@ -16,13 +23,41 @@ div {
   display: inline-block;
 }
 
-.hover {
-  background-color: red;
-}
+
 
 .btn {
-  height: 3rem;
-  width: 10rem;
   margin: 1rem auto;
   display: block;
+  background: #36afff;
+  background-image: -webkit-linear-gradient(top, #36afff, #2980b9);
+  background-image: -moz-linear-gradient(top, #36afff, #2980b9);
+  background-image: -ms-linear-gradient(top, #36afff, #2980b9);
+  background-image: -o-linear-gradient(top, #36afff, #2980b9);
+  background-image: linear-gradient(to bottom, #36afff, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  font-size: 2rem;
+  border-radius: 28px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  border: 1px white solid;
+}
+
+.btn:hover {
+  background: white;
+  cursor: pointer;
+  border: 1px #2980b9 solid;
+  color: #2980b9;
+}
+
+input {
+  display: block;
+  height: 2rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
